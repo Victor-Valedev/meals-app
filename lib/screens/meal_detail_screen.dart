@@ -19,10 +19,8 @@ class MealDetailScreen extends StatelessWidget {
             margin: EdgeInsets.symmetric(vertical: 10),
             child: Text(
               'Ingredientes',
-              style: TextStyle(
-                color: Colors.black,            
-                fontSize: 20,
-                fontFamily: 'RobotoCondensed',
+              style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                color: Colors.black
               ),
             ),
           ),
@@ -32,7 +30,6 @@ class MealDetailScreen extends StatelessWidget {
             padding: EdgeInsets.all(10),
             margin: EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: Colors.white,
               border: Border.all(color: const Color.fromARGB(255, 211, 210, 210)),
               borderRadius: BorderRadius.circular(10),
             ),
@@ -47,7 +44,12 @@ class MealDetailScreen extends StatelessWidget {
                       vertical: 5,
                       horizontal: 10,
                     ),
-                    child: Text(meal.ingredients[index]),
+                    child: Text(
+                      meal.ingredients[index],
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.secondary,
+                      )
+                    ),
                   ),
                 );
               },
