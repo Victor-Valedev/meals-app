@@ -3,25 +3,20 @@ import 'package:mealsapp/components/category_item.dart';
 import 'package:mealsapp/data/dummy_data.dart';
 
 class CategoriesScreen extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Vamos cozinhar?'),
+    return GridView(
+      padding: const EdgeInsets.all(25),
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+        maxCrossAxisExtent: 200,
+        childAspectRatio: 3 / 2,
+        crossAxisSpacing: 20,
+        mainAxisSpacing: 20,
       ),
-      body: GridView(
-        padding: const EdgeInsets.all(25),
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 200,
-          childAspectRatio: 3 / 2,
-          crossAxisSpacing: 20,
-          mainAxisSpacing: 20,
-        ),
-        children: dummyCategories.map((cat){
-          return CategoryItem(cat);
-        }).toList(),
-      ),
+      children:
+          dummyCategories.map((cat) {
+            return CategoryItem(cat);
+          }).toList(),
     );
   }
 }
