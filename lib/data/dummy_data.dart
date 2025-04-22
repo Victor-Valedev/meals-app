@@ -3,7 +3,7 @@ import 'package:mealsapp/models/meal.dart';
  
 import '../models/category.dart';
  
-const DUMMY_CATEGORIES = [
+const dummyCategories = [
   Category(
     id: 'c1',
     title: 'Italiano',
